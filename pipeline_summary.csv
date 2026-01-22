@@ -1,0 +1,5 @@
+Component,Status,Output_File
+EV TX Parsing,Complete,parsed_events.csv
+Command Extraction,0 lines,command_lines.csv
+ML Anomalies,1 threats,t1218_anomalies.csv
+MITRE Mapping,T1218.001,mitre_summary.csv
