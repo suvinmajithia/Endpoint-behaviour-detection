@@ -1,28 +1,22 @@
 # Endpoint Behaviour Detection
 
-Endpoint detection pipeline using **Sigma rules + ML anomaly detection** on Windows EVTX logs from attack samples.
+Detects threats in Windows logs using rules + machine learning.
 
 [![MITRE ATT&CK](https://img.shields.io/badge/MITRE-ATT%26CK-red)](https://attack.mitre.org/)
-[![Sigma](https://img.shields.io/badge/Sigma-blueviolet)](https://sigmahq.io/)
+[![Sigma](https://img.shields.io/badge/Sigma-blue)](https://sigmahq.io/)
 
-## What It Does
-Hybrid pipeline for EDR research:
-- **Sigma rules** → Detection queries for known IOCs (LOLBins, T1218).
-- **ML models** (Isolation Forest) on behavioral features: cmdline entropy, process trees, timestamps.
-- Parses EVTX-ATTACK-SAMPLES for training/testing.
+## Overview
+- Parses Windows EVTX attack samples
+- Applies Sigma detection rules  
+- ML finds unusual behavior patterns
+- Maps to MITRE ATT&CK techniques
 
-**MITRE Focus**: Execution (TA0002), Defense Evasion (TA0005).
+## Files
+- `01_threat_research.ipynb` - Research notebook
+- `.gitignore` - Clean repo setup
 
-## Tech Stack
-- python-evtx: EVTX parsing
-- sigma-py: Rule processing
-- scikit-learn: Anomaly detection
-- Jupyter/Pandas: Analysis
-
-## Quick Start
+## Run It
 ```bash
-git clone https://github.com/suvinmajithia/Endpoint-behaviour-detection.git
-cd Endpoint-behaviour-detection
-pip install evtx sigma-py scikit-learn pandas jupyter
+pip install jupyter pandas scikit-learn
 jupyter notebook 01_threat_research.ipynb
 
