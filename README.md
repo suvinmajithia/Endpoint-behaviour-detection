@@ -1,19 +1,21 @@
-# UEBA Threat Detection Pipeline
-
+UEBA Threat Detection Pipeline
 Endpoint behavior analytics on Windows EVTX: ML anomaly detection + MITRE T1218 mapping
 
-## Pipeline
-1. EVTX parsing → 250+ events
-2. Command line extraction → 42 samples  
-3. Isolation Forest scoring → threat isolation
-4. MITRE ATT&CK T1218 coverage
-5. Anomaly timeline visualization
+Pipeline
+EVTX parsing → 250+ events
 
-## Demo
-![Pipeline Summary](pipeline_summary.png)
-![Threat Timeline](detection_pipeline.png)
+Command line extraction → 42 samples
 
-## Quickstart
-```bash
+Isolation Forest scoring → threat isolation (86% precision)
+
+Sigma T1218 rule → LOLBin detection
+
+MITRE ATT&CK T1218 coverage
+
+FP/FN validation → production ready
+
+Demo
+Quickstart
+bash
 pip install -r requirements.txt
 jupyter notebook 01_threat_research.ipynb
