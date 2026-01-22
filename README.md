@@ -6,16 +6,19 @@ EVTX parsing → 250+ events
 
 Command line extraction → 42 samples
 
-Isolation Forest scoring → threat isolation (86% precision)
+Sigma T1218 rules → LOLBin detection
 
-Sigma T1218 rule → LOLBin detection
+Isolation Forest scoring → 86% precision
 
 MITRE ATT&CK T1218 coverage
 
-FP/FN validation → production ready
+FP/FN validation plots
 
-Demo
+## Demo
+![Pipeline](pipeline_summary.png)
+![Timeline](detection_pipeline.png) 
+![Validation](fp_fn.png)
+
 Quickstart
-bash
 pip install -r requirements.txt
 jupyter notebook 01_threat_research.ipynb
