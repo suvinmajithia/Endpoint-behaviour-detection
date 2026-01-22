@@ -1,22 +1,19 @@
-# Endpoint Behaviour Detection
+# UEBA Threat Detection Pipeline
 
-Detects threats in Windows logs using rules + machine learning.
+Endpoint behavior analytics on Windows EVTX: ML anomaly detection + MITRE T1218 mapping
 
-[![MITRE ATT&CK](https://img.shields.io/badge/MITRE-ATT%26CK-red)](https://attack.mitre.org/)
-[![Sigma](https://img.shields.io/badge/Sigma-blue)](https://sigmahq.io/)
+## Pipeline
+1. EVTX parsing → 250+ events
+2. Command line extraction → 42 samples  
+3. Isolation Forest scoring → threat isolation
+4. MITRE ATT&CK T1218 coverage
+5. Anomaly timeline visualization
 
-## Overview
-- Parses Windows EVTX attack samples
-- Applies Sigma detection rules  
-- ML finds unusual behavior patterns
-- Maps to MITRE ATT&CK techniques
+## Demo
+![Pipeline Summary](pipeline_summary.png)
+![Threat Timeline](detection_pipeline.png)
 
-## Files
-- `01_threat_research.ipynb` - Research notebook
-- `.gitignore` - Clean repo setup
-
-## Run It
+## Quickstart
 ```bash
-pip install jupyter pandas scikit-learn
+pip install -r requirements.txt
 jupyter notebook 01_threat_research.ipynb
-
