@@ -1,0 +1,23 @@
+title: Suspicious Signed Binary Execution
+id: T1218-sysmon
+status: experimental
+description: Detects signed binary proxy execution (rundll32/regsvr32 + /c)
+author: Suvin Majithia
+logsource:
+  category: process_creation
+  product: windows
+detection:
+  selection_img:
+    Image|endswith:
+      - '\rundll32.exe'
+      - '\regsvr32.exe'
+      - '\mshta.exe'
+  selection_cmd:
+    CommandLine|re: '.* /c .*|.* javascript:.*'
+  condition: selection_img and selection_cmd
+falsepositives:
+  - Legitimate admin scripts
+level: medium
+tags:
+  - attack.defense_evasion
+  - attack.t1218
